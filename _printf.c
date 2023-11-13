@@ -11,12 +11,12 @@ void _printf(char *s, ...)
 {
 va_list args; 
 unsigned int i;
-va_start(..., s);
+va_start(args ,s);
 for (i = 0; s[i] != '\0'; i++)
 {
 if (s[i] == '%')
 {
-format(s[i + 1], va_arg(args));
+format(s[i + 1], args);
 i++;
 }
 else

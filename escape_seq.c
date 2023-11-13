@@ -34,7 +34,7 @@ if (c == 'r')
 {
 print_char('\r');
 }
-if (c == '\')
+if (c == '\\')
 {
 print_char('\\');
 }

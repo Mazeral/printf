@@ -1,4 +1,5 @@
 #include "main.h"
+#include<stdlib.h>
 
 /**
  * print_char - prints a char
@@ -6,9 +7,8 @@
  * Return: Nothing
  */
 
-void print_char(char c)
+void print_char(int c)
 {
-if (c != NULL)
 _putchar(c);
 return;
 }

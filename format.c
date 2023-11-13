@@ -3,7 +3,7 @@
 
 /**
  * format - chooses the right format for the function
- * @args: The va_list variable
+ * @arg: The va_list variable
  * Return: Nothing
  */
 
@@ -11,18 +11,18 @@ void format(char c, va_list arg)
 {
 if (c == 'c')
 {
-print_char(arg);
+print_char(va_arg(arg, int));
 }
 if (c == 's')
 {
-print_string(arg);
-}
+print_string(va_arg(arg, char*));
 }
 if (c == 'd' && c == 'i')
 {
-print_dec(arg);
+print_integer(arg);
 }
 if (c == 'f')
 {
-print_dec(arg);
+print_decimal(arg);
+}
 }
