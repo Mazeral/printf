@@ -8,5 +8,7 @@
 
 void print_char(char c)
 {
-
+if (c != NULL)
+_putchar(c);
+return;
 }
