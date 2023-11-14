@@ -1,48 +1,38 @@
 #include "main.h"
+
 /**
  * print_integer - function that prints integer
  * @args: argument to be printed
  * Return: int
  */
-
 int print_integer(va_list args)
 {
-	int n = va_arg(args, int);
-	int num, la_dig = n % 10, dig;
-	int  i = 1, exp = 1, count = 0;
+    int n = va_arg(args, int);
+    int num = (n < 0) ? -n : n;  // Absolute value of n
+    int last_digit, exp = 1, count = 0;
 
-	n = n / 10;
-	num = n;
+    if (n < 0)
+    {
+        _putchar('-');
+        count++;
+    }
 
-	if (la_dig < 0)
-	{
-		_putchar('-');
-		num = -num;
-		n = -n;
-		la_dig = -la_dig;
-		i++;
-		count++,
-	}
-	if (num > 0)
-	{
-		while (num / 10 != 0)
-		{
-			exp = exp * 10;
-			num = num / 10;
-		}
-		num = n;
-		while (exp > 0)
-		{
-			dig = num / exp;
-			_putchar(dig + '0');
-			num = num - (dig * exp);
-			exp = exp / 10;
-			i++;
-			count++;
-		}
-	}
-	_putchar(la_dig + '0');
-	count++;
+    // Find the place value of the leftmost digit
+    do
+    {
+        exp *= 10;
+    } while (num / exp != 0);
 
-	return (i);
+    // Print each digit
+    do
+    {
+        exp /= 10;
+        last_digit = num / exp;
+        _putchar(last_digit + '0');
+        count++;
+        num %= exp;
+    } while (exp > 1);
+
+    return count;
 }
+
