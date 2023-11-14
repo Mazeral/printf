@@ -14,6 +14,9 @@ int _printf(const char *s, ...)
 
 	va_start(args, s);
 
+    if (s == NULL)
+    return (-1);
+
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		if (s[i] == '%')
