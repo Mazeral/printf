@@ -1,28 +1,29 @@
 #include "main.h"
-
 /**
- * print_string - prints a string
- * @s: The string to print
- * Return: Nothing
+ * print_s - print a string.
+ * @val: argumen t.
+ * Return: the length of the string.
  */
 
-int print_string(const char *s)
+int print_s(va_list val)
 {
-unsigned int i = 0;
-if (s != NULL)
-{
-for (; s[i] != '\0'; i++)
-{
-if (s[i] == '\\')
-{
-escape_seq(s[i + 1]);
-i++;
-}
-else
-{
-print_char(s[i]);
-}
-}
-}
-return (i);
+	char *s;
+	int i, len;
+
+	s = va_arg(val, char *);
+	if (s == NULL)
+	{
+		s = "(null)";
+		len = _strlen(s);
+		for (i = 0; i < len; i++)
+			_putchar(s[i]);
+		return (len);
+	}
+	else
+	{
+		len = _strlen(s);
+		for (i = 0; i < len; i++)
+			_putchar(s[i]);
+		return (len);
+	}
 }
