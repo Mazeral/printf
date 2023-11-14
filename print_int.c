@@ -32,14 +32,14 @@ int print_integer(va_list args)
 		num = n;
 		while (exp > 0)
 		{
-			digit = num / exp;
+			dig = num / exp;
 			_putchar(dig + '0');
 			num = num - (dig * exp);
 			exp = exp / 10;
 			i++;
 		}
 	}
-	_putchar(la_dig + ‘0’);
+	_putchar(la_dig + '0');
 
 	return (i);
 }

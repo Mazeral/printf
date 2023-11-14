@@ -10,5 +10,5 @@ int print_decimal(va_list args);
 int print_integer(va_list args);
 void format(char c, va_list arg);
 void escape_seq(char c);
-void _printf(char *s, ...);
+void _printf(const char *s, ...);
 #endif
