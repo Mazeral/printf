@@ -9,12 +9,11 @@
  */
 int main(void)
 {
-    int print_len = 0;
-    int string_len = 0;
-    const char s[] = "123";
-    const char s2[] = "123";
-    print_len = printf("%s%s\n", s, s2);
-    string_len = _printf("%s%s\n", s, s2);
-    printf("%d\n%d\n", print_len, string_len);
+    float flo = 3.14;
+    int n1;
+    int n2;
+    n1 = printf("%f\n", flo);
+    n2 = _printf("%f\n", flo);
+    printf("%d\n%d\n", n1, n2);
     return (0);
 }
