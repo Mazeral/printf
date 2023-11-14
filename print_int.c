@@ -9,7 +9,7 @@ int print_integer(va_list args)
 {
 	int n = va_arg(args, int);
 	int num, la_dig = n % 10, dig;
-	int  i = 1, exp = 1;
+	int  i = 1, exp = 1, count = 0;
 
 	n = n / 10;
 	num = n;
@@ -21,6 +21,7 @@ int print_integer(va_list args)
 		n = -n;
 		la_dig = -la_dig;
 		i++;
+		count++,
 	}
 	if (num > 0)
 	{
@@ -37,9 +38,11 @@ int print_integer(va_list args)
 			num = num - (dig * exp);
 			exp = exp / 10;
 			i++;
+			count++;
 		}
 	}
 	_putchar(la_dig + '0');
+	count++;
 
 	return (i);
 }
