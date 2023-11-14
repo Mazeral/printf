@@ -4,6 +4,7 @@
 /**
  * format - chooses the right format for the function
  * @arg: The va_list variable
+ * @c: The letter of the format
  * Return: Nothing
  */
 

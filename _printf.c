@@ -4,9 +4,9 @@
 /**
  * _printf - a mimic function for the real printf
  * @s: The string
- * Retrun: Nothing
+ * Return: The number of characters printed
  */
-void _printf(const char *s, ...)
+int _printf(const char *s, ...)
 {
 	va_list args;
 	unsigned int i;
@@ -28,5 +28,5 @@ void _printf(const char *s, ...)
 		}
 	}
 	va_end(args);
-	return;
+	return (p);
 }
