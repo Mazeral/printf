@@ -1,7 +1,7 @@
 #include <limits.h>
 #include <stdio.h>
 #include "main.h"
-
+#include<string.h>
 /**
  * main - Entry point
  *
@@ -9,10 +9,11 @@
  */
 int main(void)
 {
-    const char s[] = "something \t to be printed \n too";
-    _printf("%c\n", 'n');
-    printf("Let's try to printf a simple sentence %s.\n", "a string");
-    printf("\n new line \t tab \nanother new line");
-    printf("Let's try to printf a simple sentence %s.\n", s);
+    int print_len = 0;
+    int string_len = 0;
+    const char s[] = "something\n to be\t printed";
+    print_len = printf("%s\n", s);
+    string_len = _printf("%s\n", s);
+    printf("%d\n%d\n", print_len, string_len);
     return (0);
 }

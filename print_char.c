@@ -7,8 +7,8 @@
  * Return: Nothing
  */
 
-void print_char(int c)
+int print_char(int c)
 {
 _putchar(c);
-return;
+return (1);
 }

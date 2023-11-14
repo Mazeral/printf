@@ -18,13 +18,13 @@ int _printf(const char *s, ...)
 	{
 		if (s[i] == '%')
 		{
-			format(s[i + 1], args);
+			p += format(s[i + 1], args);
 			i++;
 		}
 		else
 		{
 			_putchar(s[i]);
-			p++;
+            p++;
 		}
 	}
 	va_end(args);

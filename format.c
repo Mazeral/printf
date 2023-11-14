@@ -8,22 +8,23 @@
  * Return: Nothing
  */
 
-void format(char c, va_list arg)
+int format(char c, va_list arg)
 {
 if (c == 'c')
 {
-print_char(va_arg(arg, int));
+return (print_char(va_arg(arg, int)));
 }
 if (c == 's')
 {
-print_string(va_arg(arg, char*));
+return (print_string(va_arg(arg, char*)));
 }
 if (c == 'd' && c == 'i')
 {
-print_integer(arg);
+return (print_integer(arg));
 }
 if (c == 'f')
 {
-print_decimal(arg);
+return (print_decimal(arg));
 }
+return (0);
 }

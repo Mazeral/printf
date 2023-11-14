@@ -6,7 +6,7 @@
  * Return: Nothing
  */
 
-void print_string(const char *s)
+int print_string(const char *s)
 {
 unsigned int i = 0;
 if (s != NULL)
@@ -24,4 +24,5 @@ print_char(s[i]);
 }
 }
 }
+return (i);
 }
